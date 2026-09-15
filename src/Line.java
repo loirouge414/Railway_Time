@@ -21,14 +21,23 @@ public class Line {
         return stations;
     }
 
-    public void printRoute() {
-        System.out.println(name + " 노선도");
+    public String getRouteString() {
+        StringBuilder sb = new StringBuilder(name).append(" 노선도\n");
         for (int i = 0; i < stations.size(); i++) {
-            System.out.print(stations.get(i));
+            sb.append(stations.get(i));
             if (i < stations.size() - 1) {
-                System.out.print(" - ");
+                sb.append(" - ");
             }
         }
-        System.out.println();
+        return sb.toString();
+    }
+
+    public void printRoute() {
+        System.out.println(getRouteString());
+    }
+
+    @Override
+    public String toString() {
+        return name;
     }
 }
