@@ -1,11 +1,13 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Country {
+public class Region {
     private final String name;
     private final List<Line> lines = new ArrayList<>();
 
-    public Country(String name) {
+    public Region(String name) {
         this.name = name;
     }
 
