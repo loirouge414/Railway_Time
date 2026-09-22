@@ -5,6 +5,10 @@ import java.util.List;
 
 public class Line {
     private final String name;
+    private String company;
+    private String startStation;
+    private String endStation;
+    private String operationType;
     private final List<Station> stations = new ArrayList<>();
 
     public Line(String name) {
@@ -13,6 +17,38 @@ public class Line {
 
     public String getName() {
         return name;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setStartStation(String startStation) {
+        this.startStation = startStation;
+    }
+
+    public String getStartStation() {
+        return startStation;
+    }
+
+    public void setEndStation(String endStation) {
+        this.endStation = endStation;
+    }
+
+    public String getEndStation() {
+        return endStation;
+    }
+
+    public void setOperationType(String operationType) {
+        this.operationType = operationType;
+    }
+
+    public String getOperationType() {
+        return operationType;
     }
 
     public void addStation(Station station) {

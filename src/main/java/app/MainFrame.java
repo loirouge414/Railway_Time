@@ -18,6 +18,7 @@ public class MainFrame extends JFrame {
     public static final String LINE_LIST = "LINE_LIST";
     public static final String LINE_EDIT = "LINE_EDIT";
     public static final String STATION_LIST = "STATION_LIST";
+    public static final String STATION_EDIT = "STATION_EDIT";
     public static final String STATION_DETAIL = "STATION_DETAIL";
     public static final String ADMIN_LOGIN = "ADMIN_LOGIN";
     public static final String EDIT_REQUEST = "EDIT_REQUEST";
@@ -25,17 +26,23 @@ public class MainFrame extends JFrame {
 
     private final CardLayout cardLayout = new CardLayout();
     private final JPanel screens = new JPanel(cardLayout);
+    private final LineListScreen lineListScreen;
+    private final StationListScreen stationListScreen;
 
     public MainFrame() {
         super("Railway Time");
+
+        lineListScreen = new LineListScreen(this);
+        stationListScreen = new StationListScreen(this);
 
         screens.add(new SplashScreen(this), SPLASH);
         screens.add(new CountrySelectionScreen(this), COUNTRY_SELECTION);
         screens.add(new RegionSelectionScreen(this), REGION_SELECTION);
         screens.add(new CategorySelectionScreen(this), CATEGORY_SELECTION);
-        screens.add(new LineListScreen(this), LINE_LIST);
-        screens.add(new LineEditScreen(), LINE_EDIT);
-        screens.add(new StationListScreen(this), STATION_LIST);
+        screens.add(lineListScreen, LINE_LIST);
+        screens.add(new LineEditScreen(this), LINE_EDIT);
+        screens.add(stationListScreen, STATION_LIST);
+        screens.add(new StationEditScreen(this), STATION_EDIT);
         screens.add(new StationDetailScreen(), STATION_DETAIL);
         screens.add(new AdminLoginScreen(), ADMIN_LOGIN);
         screens.add(new EditRequestScreen(), EDIT_REQUEST);
@@ -50,5 +57,13 @@ public class MainFrame extends JFrame {
 
     public void showScreen(String name) {
         cardLayout.show(screens, name);
+    }
+
+    public void refreshLineList() {
+        lineListScreen.refresh();
+    }
+
+    public void refreshStationList() {
+        stationListScreen.refresh();
     }
 }

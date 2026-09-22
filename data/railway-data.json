@@ -1,0 +1,50 @@
+{
+  "countries": [
+    {
+      "name": "대한민국",
+      "regions": [
+        {
+          "name": "수도권",
+          "lines": [
+            {
+              "name": "1호선",
+              "company": "",
+              "startStation": "",
+              "endStation": "",
+              "operationType": "",
+              "stations": ["서울역", "시청", "종각"]
+            },
+            {
+              "name": "2호선",
+              "company": "",
+              "startStation": "",
+              "endStation": "",
+              "operationType": "",
+              "stations": ["강남", "역삼", "삼성"]
+            }
+          ],
+          "stations": ["서울역", "시청", "종각", "강남", "역삼", "삼성"]
+        }
+      ]
+    },
+    {
+      "name": "일본",
+      "regions": [
+        {
+          "name": "도쿄권",
+          "lines": [
+            {
+              "name": "야마노테선",
+              "company": "",
+              "startStation": "",
+              "endStation": "",
+              "operationType": "",
+              "stations": ["도쿄", "신주쿠", "시부야"]
+            }
+          ],
+          "stations": ["도쿄", "신주쿠", "시부야"]
+        }
+      ]
+    }
+  ]
+}
